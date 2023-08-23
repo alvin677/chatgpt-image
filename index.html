@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script>
+            colors = ["white", "black", "red", "blue", "green", "yellow", "darkgreen"];
+            window.onload = function() {
+            let canvas = document.getElementById("render");
+            let ctx = canvas.getContext("2d");
+
+            let size = 32;
+
+            // ask chatgpt to make an 16x16 2d array drawing a certain shape or something like that, then paste it below
+            let image = [
+    [0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4, 4, 0, 0, 0, 0],
+    [0, 0, 0, 4, 4, 4, 4, 6, 6, 6, 4, 4, 4, 0, 0, 0],
+    [0, 0, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6, 4, 4, 0, 0],
+    [0, 4, 4, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 4, 4, 0],
+    [0, 4, 6, 6, 6, 6, 6, 4, 4, 4, 6, 6, 6, 6, 4, 0],
+    [0, 4, 6, 6, 4, 4, 4, 0, 0, 0, 4, 4, 6, 6, 4, 0],
+    [0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 0, 0],
+    [0, 0, 0, 0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+];
+
+for (let x = 0; x < image.length; x++) {
+    for (let y = 0; y < image[x].length; y++) {
+        ctx.fillStyle = colors[image[x][y]];
+        ctx.fillRect(y*size, x*size, size, size);
+    }
+}
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <canvas id = "render" height="1080px" width="1920px" style = ""></canvas>
+    </body>
+</html>
